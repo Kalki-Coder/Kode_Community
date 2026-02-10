@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events | My MCA Club</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="dm-toggle" aria-label="Toggle dark mode">☀️</button>
+
+    <header class="site-header">
+      <div class="logo">
+        <a href="index.html">My MCA Club</a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="reveal">
+        <section class="page-header">
+          <h1>Upcoming Events</h1>
+          <p>
+            Stay updated with our latest workshops, hackathons, and activities.
+          </p>
+        </section>
+
+        <div class="events-container">
+          <aside class="sidebar">
+            <h2>Filter Events</h2>
+            <div class="filters">
+              <button class="filter-btn active" data-cat="all">
+                All Events
+              </button>
+              <button class="filter-btn" data-cat="workshop">Workshops</button>
+              <button class="filter-btn" data-cat="meetup">Meetups</button>
+              <button class="filter-btn" data-cat="webinar">Webinars</button>
+            </div>
+          </aside>
+
+          <section class="events-list card-grid">
+            <article class="card event-item" data-cat="workshop">
+              <div class="card-top"></div>
+              <div class="card-body">
+                <span class="card-tag">Workshop</span>
+                <h3>JavaScript Workshop</h3>
+                <div class="card-date">📅 Oct 24, 2026</div>
+                <p>
+                  Hands-on workshop for JS learners covering ES6+ features and
+                  async programming.
+                </p>
+              </div>
+            </article>
+
+            <article class="card event-item" data-cat="meetup">
+              <div class="card-top"></div>
+              <div class="card-body">
+                <span class="card-tag">Meetup</span>
+                <h3>Local Devs Meetup</h3>
+                <div class="card-date">📅 Nov 02, 2026</div>
+                <p>
+                  Networking and lightning talks with developers from top local
+                  tech companies.
+                </p>
+              </div>
+            </article>
+
+            <article class="card event-item" data-cat="webinar">
+              <div class="card-top"></div>
+              <div class="card-body">
+                <span class="card-tag">Webinar</span>
+                <h3>Design Systems</h3>
+                <div class="card-date">📅 Nov 15, 2026</div>
+                <p>
+                  Remote session on building scalable design systems using Figma
+                  and React.
+                </p>
+              </div>
+            </article>
+
+            <article class="card event-item" data-cat="workshop">
+              <div class="card-top"></div>
+              <div class="card-body">
+                <span class="card-tag">Workshop</span>
+                <h3>React Basics</h3>
+                <div class="card-date">📅 Dec 01, 2026</div>
+                <p>
+                  Introduction to component-based architecture and state
+                  management.
+                </p>
+              </div>
+            </article>
+
+            <article class="card event-item" data-cat="meetup">
+              <div class="card-top"></div>
+              <div class="card-body">
+                <span class="card-tag">Meetup</span>
+                <h3>Winter Code Fest</h3>
+                <div class="card-date">📅 Dec 10, 2026</div>
+                <p>
+                  Annual coding competition and celebration for all club
+                  members.
+                </p>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 My MCA Club | Contact: mithlesh.guptag0329@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
