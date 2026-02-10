@@ -1,190 +1,195 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================
-       1. DARK MODE TOGGLE
-       ========================================= */
-  const toggle = document.getElementById("dm-toggle");
-  const body = document.body;
-
-  // Helper function to apply theme
-  const applyTheme = (isDark) => {
-    // MATCHING CSS: Uses 'dark-mode' class to match your style.css
-    body.classList.toggle("dark-mode", isDark);
-
-    // Save to browser storage
-    localStorage.setItem("site-dark", isDark ? "1" : "0");
-
-    // Update button icon
-    if (toggle) toggle.textContent = isDark ? "🌙" : "☀️";
-  };
-
-  // Load saved preference
-  const savedTheme = localStorage.getItem("site-dark") === "1";
-  applyTheme(savedTheme);
-
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      const isDarkNow = body.classList.contains("dark-mode");
-      applyTheme(!isDarkNow);
-    });
-  }
-
-  /* =========================================
-       2. IMAGE SLIDER (With Timer Reset)
-       ========================================= */
-  const slider = document.querySelector(".slider");
-  if (slider) {
-    const slides = slider.querySelectorAll(".slide");
-    const prev = slider.querySelector(".prev");
-    const next = slider.querySelector(".next");
-    let idx = 0;
-    let slideInterval;
-
-    const showSlide = (i) => {
-      // Ensure index wraps around correctly
-      if (i >= slides.length) idx = 0;
-      else if (i < 0) idx = slides.length - 1;
-      else idx = i;
-
-      slides.forEach((s, si) => s.classList.toggle("active", si === idx));
-    };
-
-    const nextSlide = () => showSlide(idx + 1);
-    const prevSlide = () => showSlide(idx - 1);
-
-    // Start Auto-play
-    const startTimer = () => {
-      slideInterval = setInterval(nextSlide, 4000);
-    };
-
-    // Reset Auto-play (prevents jumping if user clicks button)
-    const resetTimer = () => {
-      clearInterval(slideInterval);
-      startTimer();
-    };
-
-    // Initialize
-    showSlide(idx);
-    startTimer();
-
-    if (prev) {
-      prev.addEventListener("click", () => {
-        prevSlide();
-        resetTimer();
-      });
-    }
-    if (next) {
-      next.addEventListener("click", () => {
-        nextSlide();
-        resetTimer();
-      });
-    }
-  }
-
-  /* =========================================
-       3. EVENTS FILTER
-       ========================================= */
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const eventItems = document.querySelectorAll(".event-item"); // Assuming card class is event-item
-
-  if (filterBtns.length > 0) {
-    filterBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        // Remove active class from all buttons
-        filterBtns.forEach((b) => b.classList.remove("active"));
-        // Add active to clicked button
-        btn.classList.add("active");
-
-        const category = btn.dataset.cat;
-
-        eventItems.forEach((item) => {
-          // Check if item matches category or if category is 'all'
-          // Note: Your HTML items need data-cat="technical" etc.
-          if (category === "all" || item.dataset.cat === category) {
-            item.style.display = "block";
-          } else {
-            item.style.display = "none";
-          }
-        });
-      });
-    });
-  }
-
-  /* =========================================
-       4. CONTACT FORM VALIDATION
-       ========================================= */
-  const form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      // Get fields safely
-      const nameInput = form.querySelector('[name="name"]');
-      const emailInput = form.querySelector('[name="email"]');
-      const msgInput = form.querySelector('[name="message"]');
-      const errorDiv = document.getElementById("form-errors");
-      const successDiv = document.getElementById("form-success");
-
-      // Reset messages
-      if (errorDiv) {
-        errorDiv.style.display = "none";
-        errorDiv.textContent = "";
-      }
-      if (successDiv) {
-        successDiv.style.display = "none";
-        successDiv.textContent = "";
-      }
-
-      const name = nameInput ? nameInput.value.trim() : "";
-      const email = emailInput ? emailInput.value.trim() : "";
-      const msg = msgInput ? msgInput.value.trim() : "";
-
-      // Validation Logic
-      if (
-        name.length < 2 ||
-        !/^[^@]+@[^@]+\.[^@]+$/.test(email) ||
-        msg.length < 10
-      ) {
-        if (errorDiv) {
-          errorDiv.textContent =
-            "Please fill all fields correctly. (Name > 2 chars, valid email, Msg > 10 chars)";
-          errorDiv.style.display = "block";
-        } else {
-          alert("Please check your inputs.");
-        }
-        return;
-      }
-
-      // Success (Simulation)
-      if (successDiv) {
-        successDiv.textContent = "Message sent successfully!";
-        successDiv.style.display = "block";
-      } else {
-        alert("Message sent!");
-      }
-      form.reset();
-    });
-  }
-
-  /* =========================================
-       5. SCROLL REVEAL (Intersection Observer)
-       ========================================= */
-  const revealElements = document.querySelectorAll(".reveal");
-
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active"); // Matches CSS .reveal.active
-          observer.unobserve(entry.target); // Stop watching once revealed
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0.15, // Trigger when 15% of element is visible
-      rootMargin: "0px",
-    }
-  );
-
-  revealElements.forEach((el) => revealObserver.observe(el));
+  initTheme();
+  initMobileMenu();
+  initActiveLink();
+  
+  // Page specific inits
+  if (document.querySelector(".slider-container")) initSlider();
+  if (document.querySelector(".filters")) initFilters();
+  if (document.getElementById("contact-form")) initForm();
 });
+
+/* --- 1. Theme Manager --- */
+function initTheme() {
+  const toggleBtn = document.getElementById("dm-toggle");
+  const body = document.body;
+  
+  // Check localStorage or System Pref
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    body.classList.add("dark-mode");
+    updateIcon(true);
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const isDark = body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      updateIcon(isDark);
+    });
+  }
+
+  function updateIcon(isDark) {
+    if (!toggleBtn) return;
+    const icon = toggleBtn.querySelector("i");
+    icon.className = isDark ? "ri-moon-fill" : "ri-sun-fill";
+  }
+}
+
+/* --- 2. Mobile Menu --- */
+function initMobileMenu() {
+  const toggle = document.querySelector(".mobile-toggle");
+  const nav = document.querySelector(".main-nav");
+  const icon = toggle?.querySelector("i");
+
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    const isOpen = nav.classList.contains("active");
+    icon.className = isOpen ? "ri-close-line" : "ri-menu-3-line";
+  });
+
+  // Close when clicking a link
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      icon.className = "ri-menu-3-line";
+    });
+  });
+}
+
+/* --- 3. Active Link Highlighter --- */
+function initActiveLink() {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-link").forEach(link => {
+    // Exact match or root for index
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+}
+
+/* --- 4. Gallery Slider --- */
+function initSlider() {
+  const slides = document.querySelectorAll(".slide");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    
+    // Loop logic
+    if (index >= slides.length) current = 0;
+    else if (index < 0) current = slides.length - 1;
+    else current = index;
+
+    slides[current].classList.add("active");
+  }
+
+  function next() {
+    showSlide(current + 1);
+    resetTimer();
+  }
+
+  function prev() {
+    showSlide(current - 1);
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, 5000);
+  }
+
+  // Event Listeners
+  if (nextBtn) nextBtn.addEventListener("click", next);
+  if (prevBtn) prevBtn.addEventListener("click", prev);
+
+  // Auto Start
+  resetTimer();
+}
+
+/* --- 5. Event Filtering --- */
+function initFilters() {
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".event-item");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Visual State
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.dataset.cat;
+
+      cards.forEach(card => {
+        const cardCat = card.dataset.cat;
+        if (category === "all" || category === cardCat) {
+          card.style.display = "block";
+          setTimeout(() => card.style.opacity = "1", 10);
+        } else {
+          card.style.opacity = "0";
+          setTimeout(() => card.style.display = "none", 300);
+        }
+      });
+    });
+  });
+}
+
+/* --- 6. Form Handling & Toasts --- */
+function initForm() {
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const btn = form.querySelector("button");
+    const originalText = btn.innerHTML;
+    
+    btn.disabled = true;
+    btn.innerHTML = `<i class="ri-loader-4-line"></i> Sending...`;
+
+    // Simulate API
+    setTimeout(() => {
+      showToast("Message sent successfully!", "success");
+      form.reset();
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    }, 1500);
+  });
+}
+
+function showToast(msg, type) {
+  const container = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  
+  toast.className = `toast toast-${type}`;
+  toast.style.cssText = `
+    background: var(--bg-surface);
+    color: var(--text-main);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-left: 4px solid ${type === 'success' ? '#10b981' : '#ef4444'};
+    display: flex; align-items: center; gap: 10px;
+    animation: slideIn 0.3s ease;
+  `;
+  
+  toast.innerHTML = `
+    <i class="${type === 'success' ? 'ri-checkbox-circle-line' : 'ri-error-warning-line'}"></i>
+    <span>${msg}</span>
+  `;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(100%)";
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}

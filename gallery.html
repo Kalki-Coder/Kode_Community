@@ -1,77 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery | My MCA Club</title>
+    <title>Gallery | Kode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="dm-toggle" aria-label="Toggle dark mode">☀️</button>
-
     <header class="site-header">
       <div class="logo">
-        <a href="index.html">My MCA Club</a>
+        <a href="index.html">
+          <span style="font-weight: 800; color: var(--primary)">K</span>ODE<span
+            style="color: var(--primary)"
+            >.</span
+          >
+        </a>
       </div>
+
+      <button class="mobile-toggle" aria-label="Menu">
+        <i class="ri-menu-3-line"></i>
+      </button>
 
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <button id="dm-toggle" aria-label="Toggle theme">
+          <i class="ri-sun-line"></i>
+        </button>
       </nav>
     </header>
 
     <main>
       <div class="reveal">
-        <section class="gallery-slider">
-          <h2>Featured Gallery</h2>
-          <div class="slider">
-            <button class="prev" aria-label="Previous">‹</button>
+        <section
+          class="hero"
+          style="
+            min-height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000, #1e1e1e);
+          "
+        >
+          <div class="hero-content">
+            <h1>Visual Log</h1>
+            <p>
+              Documenting the journey. From late-night debugging sessions to
+              competition victories, this is KODE in action.
+            </p>
+          </div>
+        </section>
+
+        <section class="slider-section">
+          <div class="section-title">
+            <h2>
+              <i class="ri-flashlight-fill" style="color: var(--primary)"></i>
+              Spotlight
+            </h2>
+          </div>
+
+          <div class="slider cinematic-slider">
             <div class="slides">
               <div class="slide active">
-                <img src="assets/placeholder05.jpg" alt="Slide 1" />
+                <img src="assets/placeholder05.jpg" alt="Hackathon Winners" />
+                <div class="slide-caption">
+                  <h3>National Hackathon 2025</h3>
+                  <p>First Place Victory @ TechSummit</p>
+                </div>
               </div>
               <div class="slide">
-                <img src="assets/placeholder06.jpg" alt="Slide 2" />
+                <img src="assets/placeholder06.jpg" alt="Guest Lecture" />
+                <div class="slide-caption">
+                  <h3>Industry Talk</h3>
+                  <p>Cloud Architecture with Google Experts</p>
+                </div>
               </div>
               <div class="slide">
-                <img src="assets/placeholder07.jpg" alt="Slide 3" />
+                <img src="assets/placeholder07.jpg" alt="Community Coding" />
+                <div class="slide-caption">
+                  <h3>Open Source Weekend</h3>
+                  <p>Contributing to the Ecosystem</p>
+                </div>
               </div>
             </div>
-            <button class="next" aria-label="Next">›</button>
+
+            <button class="prev" aria-label="Previous">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button class="next" aria-label="Next">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
           </div>
         </section>
 
-        <section class="page-header">
-          <h1>Gallery</h1>
-          <p>Photos and memories from our past events.</p>
-        </section>
+        <section class="archive-section">
+          <div class="section-title">
+            <h2>The Archives</h2>
+            <p class="subtitle">Curated moments from past semesters.</p>
+          </div>
 
-        <section class="gallery-grid">
-          <div class="gallery-item">
-            <img src="assets/placeholder01.jpg" alt="Robotics Workshop" />
-          </div>
-          <div class="gallery-item">
-            <img src="assets/placeholder02.jpg" alt="Open Mic Night" />
-          </div>
-          <div class="gallery-item">
-            <img src="assets/placeholder03.jpg" alt="Strategy & Planning" />
-          </div>
-          <div class="gallery-item">
-            <img src="assets/placeholder04.jpg" alt="Gaming Tournament" />
+          <div class="gallery-grid">
+            <div class="gallery-item hover-card">
+              <img src="assets/placeholder01.jpg" alt="Robotics Workshop" />
+              <div class="item-overlay">
+                <span class="tag">Workshop</span>
+                <h3>Robotics & AI</h3>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-card">
+              <img src="assets/placeholder02.jpg" alt="Open Mic" />
+              <div class="item-overlay">
+                <span class="tag">Social</span>
+                <h3>Open Mic Night</h3>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-card">
+              <img src="assets/placeholder03.jpg" alt="Strategy" />
+              <div class="item-overlay">
+                <span class="tag">Planning</span>
+                <h3>Core Team Strategy</h3>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-card">
+              <img src="assets/placeholder04.jpg" alt="Gaming" />
+              <div class="item-overlay">
+                <span class="tag">Fun</span>
+                <h3>Valorant Tournament</h3>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </main>
-
     <footer class="site-footer">
-      <p>&copy; 2026 My MCA Club | Contact: mithlesh.guptag0329@gmail.com</p>
-    </footer>
+      <div class="footer-content">
+        <div class="footer-col brand-col">
+          <div class="logo">
+            KODE<span style="color: var(--primary)">.</span>
+          </div>
+          <p>
+            Architecting the future of software. A collective focused on
+            innovation, deployment, and open-source mastery.
+          </p>
+        </div>
 
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
+            <i class="ri-mail-send-line"></i> mithlesh.guptag0329@gmail.com
+          </a>
+
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="ri-linkedin-fill"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="ri-twitter-x-line"></i
+            ></a>
+            <a href="#" aria-label="Discord"><i class="ri-discord-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 KODE. Built for the Community.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+    <div id="toast-container"></div>
     <script src="script.js"></script>
   </body>
 </html>

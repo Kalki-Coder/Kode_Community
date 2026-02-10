@@ -1,80 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | My MCA Club</title>
+    <title>Contact | Kode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button
-      id="dm-toggle"
-      aria-label="Toggle dark mode"
-    >
-      ☀️
-    </button>
-
     <header class="site-header">
       <div class="logo">
-        <a href="index.html">My MCA Club</a>
+        <a href="index.html">
+          <span style="font-weight: 800; color: var(--primary)">K</span>ODE<span
+            style="color: var(--primary)"
+            >.</span
+          >
+        </a>
       </div>
+
+      <button class="mobile-toggle" aria-label="Menu">
+        <i class="ri-menu-3-line"></i>
+      </button>
+
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+        <button id="dm-toggle" aria-label="Toggle theme">
+          <i class="ri-sun-line"></i>
+        </button>
       </nav>
     </header>
 
     <main>
       <div class="reveal">
-        <section class="page-header">
-          <h1>Contact & Join</h1>
-          <p>Reach out to us or fill the form below to join the club.</p>
-        </section>
+        <section class="contact-split">
+          <div class="contact-info">
+            <h1>Initialize Connection</h1>
+            <p class="lead-text">
+              Ready to push code to production? Whether you want to join the
+              core team, partner for an event, or just debug a query, our
+              channels are open.
+            </p>
 
-        <section class="content-section">
-          <form id="contact-form" class="contact-form">
-            <label for="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your full name"
-              required
-            />
+            <div class="info-grid">
+              <div class="info-item">
+                <div class="icon-box"><i class="ri-mail-send-line"></i></div>
+                <div>
+                  <h3>General Inquiries</h3>
+                  <a
+                    href="mailto:mithlesh.guptag0329@gmail.com"
+                    class="link-hover"
+                    >mithlesh.guptag0329@gmail.com</a
+                  >
+                </div>
+              </div>
 
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
+              <div class="info-item">
+                <div class="icon-box"><i class="ri-map-pin-line"></i></div>
+                <div>
+                  <h3>Headquarters</h3>
+                  <p>Department of Computer Science<br />University Campus</p>
+                </div>
+              </div>
+            </div>
 
-            <label for="message">Message / Why do you want to join?</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Write your message here"
-              required
-            ></textarea>
+            <div class="status-box">
+              <span class="status-dot"></span>
+              <p>
+                Membership Applications are <strong>OPEN</strong> for 2026
+                Batch.
+              </p>
+            </div>
+          </div>
 
-            <button type="submit" class="btn-primary">Submit</button>
-          </form>
+          <div class="form-container">
+            <form id="contact-form" class="industry-form">
+              <div class="form-group">
+                <label for="name">Identity</label>
+                <div class="input-wrapper">
+                  <i class="ri-user-line field-icon"></i>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Communication Channel</label>
+                <div class="input-wrapper">
+                  <i class="ri-at-line field-icon"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="student@university.edu"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Payload / Intent</label>
+                <div class="input-wrapper">
+                  <i class="ri-chat-1-line field-icon area-icon"></i>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us why you want to join..."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary full-width">
+                Transmit Data <i class="ri-send-plane-fill"></i>
+              </button>
+            </form>
+          </div>
         </section>
       </div>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; 2026 My MCA Club | Contact: mithlesh.guptag0329@gmail.com</p>
-    </footer>
+      <div class="footer-content">
+        <div class="footer-col brand-col">
+          <div class="logo">
+            KODE<span style="color: var(--primary)">.</span>
+          </div>
+          <p>
+            Architecting the future of software. A collective focused on
+            innovation, deployment, and open-source mastery.
+          </p>
+        </div>
 
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
+            <i class="ri-mail-send-line"></i> mithlesh.guptag0329@gmail.com
+          </a>
+
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="ri-linkedin-fill"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="ri-twitter-x-line"></i
+            ></a>
+            <a href="#" aria-label="Discord"><i class="ri-discord-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 KODE. Built for the Community.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+    <div id="toast-container"></div>
     <script src="script.js"></script>
   </body>
 </html>
