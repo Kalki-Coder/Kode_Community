@@ -1,160 +1,154 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Kode</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/style_phase_1.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="logo">
-        <a href="index.html">
-          <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
-        </a>
-      </div>
 
-      <button class="mobile-toggle" aria-label="Menu">
-        <i class="ri-menu-3-line"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Kode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style_phase_2.css" />
+  <link rel="stylesheet" href="css/style_phase_1.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html">
+        <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
+      </a>
+    </div>
+
+    <button class="mobile-toggle" aria-label="Menu">
+      <i class="ri-menu-3-line"></i>
+    </button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button id="dm-toggle" aria-label="Toggle theme">
+        <i class="ri-sun-line"></i>
       </button>
+    </nav>
+  </header>
 
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="events.html" class="nav-link">Events</a></li>
-          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-        <button id="dm-toggle" aria-label="Toggle theme">
-          <i class="ri-sun-line"></i>
-        </button>
-      </nav>
-    </header>
+  <main>
+    <div class="reveal">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Build_ Ship_ Scale.</h1>
 
-    <main>
-      <div class="reveal">
-        <section class="hero">
-          <div class="hero-content">
-            <h1>Build_ Ship_ Scale.</h1>
-
-            <p>
-              We are a high-performance collective bridging the gap between
-              academic theory and production-grade engineering. Don't just learn
-              code—deploy it.
-            </p>
-
-            <a href="events.html" class="btn-primary">
-              Explore the Ecosystem <i class="ri-arrow-right-line"></i>
-            </a>
-          </div>
-        </section>
-
-        <section class="features">
-          <div class="feature-card">
-            <div class="home-card-icons">
-              <i class="ri-team-fill"></i>
-            </div>
-            <h2>The Collective</h2>
-            <p>
-              We are more than a club; we are an ecosystem of future-ready
-              architects and engineers. KODE represents the intersection of
-              academic rigor and industry innovation, dedicated to mastering the
-              art of modern software craftsmanship.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="home-card-icons">
-              <i class="ri-code-s-slash-line"></i>
-            </div>
-            <h2>Our Craft</h2>
-            <p>
-              Bridging the gap between theory and deployment. From high-octane
-              hackathons to full-stack development cycles, we build scalable
-              solutions and contribute to open-source ecosystems using the
-              latest industry-standard stacks.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="home-card-icons">
-              <i class="ri-rocket-2-fill"></i>
-            </div>
-            <h2>The Mission</h2>
-            <p>
-              KODE is for those who refuse to settle for "Hello World." If you
-              have the hunger to push boundaries, break legacy systems, and
-              define the next era of technology, your seat at the table is
-              waiting.
-            </p>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-content">
-        <div class="footer-col brand-col">
-          <div class="logo">
-            KODE<span style="color: var(--primary)">.</span>
-          </div>
           <p>
-            Architecting the future of software. A collective focused on
-            innovation, deployment, and open-source mastery.
+            We are a high-performance collective bridging the gap between
+            academic theory and production-grade engineering. Don't just learn
+            code—deploy it.
+          </p>
+
+          <a href="events.html" class="btn-primary">
+            Explore the Ecosystem <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature-card">
+          <div class="home-card-icons">
+            <i class="ri-team-fill"></i>
+          </div>
+          <h2>The Collective</h2>
+          <p>
+            We are more than a club; we are an ecosystem of future-ready
+            architects and engineers. KODE represents the intersection of
+            academic rigor and industry innovation, dedicated to mastering the
+            art of modern software craftsmanship.
           </p>
         </div>
 
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-            <i class="ri-mail-send-line"></i> mithlesh.guptag0329@gmail.com
-          </a>
-
-          <div class="social-links">
-            <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="ri-linkedin-fill"></i
-            ></a>
-            <a href="#" aria-label="Twitter"
-              ><i class="ri-twitter-x-line"></i
-            ></a>
-            <a href="#" aria-label="Discord"><i class="ri-discord-fill"></i></a>
+        <div class="feature-card">
+          <div class="home-card-icons">
+            <i class="ri-code-s-slash-line"></i>
           </div>
+          <h2>Our Craft</h2>
+          <p>
+            Bridging the gap between theory and deployment. From high-octane
+            hackathons to full-stack development cycles, we build scalable
+            solutions and contribute to open-source ecosystems using the
+            latest industry-standard stacks.
+          </p>
         </div>
+
+        <div class="feature-card">
+          <div class="home-card-icons">
+            <i class="ri-rocket-2-fill"></i>
+          </div>
+          <h2>The Mission</h2>
+          <p>
+            KODE is for those who refuse to settle for "Hello World." If you
+            have the hunger to push boundaries, break legacy systems, and
+            define the next era of technology, your seat at the table is
+            waiting.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-col brand-col">
+        <div class="logo">
+          <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
+        </div>
+        <p>
+          Architecting the future of software. A collective focused on
+          innovation, deployment, and open-source mastery.
+        </p>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 KODE. Built for the Community.</p>
-        <div class="legal-links">
-          <a href="#">Privacy Policy</a>
-          <span>•</span>
-          <a href="#">Terms of Service</a>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Brand</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Business</h4>
+        <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
+          <i class="ri-mail-send-line"></i> Email Us
+        </a>
+
+        <div class="social-links">
+          <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" aria-label="Discord"><i class="ri-discord-fill"></i></a>
         </div>
       </div>
-    </footer>
-    <div id="toast-container"></div>
-    <script src="script.js"></script>
-  </body>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <span>•</span>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+  <div id="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+
 </html>
