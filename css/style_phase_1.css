@@ -1,0 +1,46 @@
+:root {
+  --font-main: "Outfit", sans-serif;
+
+  /* Light Mode */
+  --bg-body: #f0f2f5;
+  --bg-card: rgba(255, 255, 255, 0.85); /* Glass effect */
+  --bg-header: rgba(255, 255, 255, 0.7);
+  --text-main: #1a1c1e;
+  --text-muted: #6c757d;
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.3);
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  --radius: 16px;
+}
+
+body.dark-mode {
+  --bg-body: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-header: rgba(15, 23, 42, 0.7);
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.4);
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo styling */
+.logo-K {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.logo-dot {
+    color: var(--primary);
+}
+
+
+/* Features Cards */
+.home-card-icons {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
