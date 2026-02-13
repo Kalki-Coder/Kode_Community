@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initActiveLink();
   
   // Page specific inits
-  if (document.querySelector(".slider-container")) initSlider();
+  if (document.querySelector(".slider-section") || document.querySelector(".slider")) initSlider();
   if (document.querySelector(".filters")) initFilters();
   if (document.getElementById("contact-form")) initForm();
 });
@@ -251,3 +251,43 @@ function showToast(msg, type) {
     setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
+
+/* --- 7. Gallery Lightbox --- */
+// Exposed globally for HTML onclick attributes
+window.openLightbox = function(element) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  
+  // Get image source from the clicked card's image
+  const img = element.querySelector('img');
+  const title = element.querySelector('h3').textContent;
+  
+  if (img && lightbox && lightboxImg) {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    if (caption) caption.textContent = title;
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  }
+};
+
+window.closeLightbox = function() {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+};
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') window.closeLightbox();
+});
+
+// Close on clicking outside image
+document.addEventListener('click', (e) => {
+  const lightbox = document.getElementById('lightbox');
+  if (e.target === lightbox) window.closeLightbox();
+});

@@ -42,15 +42,15 @@
     <div class="reveal">
       <section class="hero gallery-hero">
         <div class="hero-content">
-          <h1>Visual Log</h1>
-          <p>
+          <h1 class="fade-in">Visual Log</h1>
+          <p class="fade-in delay-1">
             Documenting the journey. From late-night debugging sessions to
             competition victories, this is KODE in action.
           </p>
         </div>
       </section>
 
-      <section class="slider-section">
+      <section class="slider-section fade-in delay-2">
         <div class="section-title">
           <h2>
             <i class="ri-flashlight-fill logo-dot"></i>
@@ -67,9 +67,6 @@
                 <p>Class focused on modern frameworks (React, Next.js), backend scalability, and DevOps.</p>
               </div>
             </div>
-            <button class="next" aria-label="Next">
-              <i class="ri-arrow-right-s-line"></i>
-            </button>
             <div class="slide">
               <img src="../assets/placeholder06.jpg" alt="Tech Lead Meetup" />
               <div class="slide-caption">
@@ -85,6 +82,9 @@
               </div>
             </div>
           </div>
+          <button class="next" aria-label="Next">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
           <button class="prev" aria-label="Previous">
             <i class="ri-arrow-left-s-line"></i>
           </button>
@@ -92,45 +92,92 @@
       </section>
 
       <section class="archive-section">
-        <div class="section-title">
+        <div class="section-title fade-in">
           <h2>The Archives</h2>
           <p class="subtitle">Curated moments from past semesters.</p>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item hover-card">
-            <img src="../assets/placeholder01.jpg" alt="Robotics Workshop" />
-            <div class="item-overlay">
-              <span class="tag">Workshop</span>
-              <h3>Robotics & AI</h3>
+        <div class="masonry-grid">
+          <!-- Item 1 -->
+          <div class="masonry-item fade-in-up">
+            <div class="gallery-card" onclick="openLightbox(this)">
+              <img src="../assets/placeholder01.jpg" alt="Robotics Workshop" loading="lazy" />
+              <div class="card-overlay">
+                <span class="category-pill">Workshop</span>
+                <h3>Robotics & AI</h3>
+                <i class="ri-fullscreen-line expand-icon"></i>
+              </div>
             </div>
           </div>
 
-          <div class="gallery-item hover-card">
-            <img src="../assets/placeholder02.jpg" alt="Guitar Club" />
-            <div class="item-overlay">
-              <span class="tag">Social</span>
-              <h3>Making of Guitar Club</h3>
+          <!-- Item 2 -->
+          <div class="masonry-item fade-in-up delay-1">
+            <div class="gallery-card" onclick="openLightbox(this)">
+              <img src="../assets/placeholder02.jpg" alt="Guitar Club" loading="lazy" />
+              <div class="card-overlay">
+                <span class="category-pill">Social</span>
+                <h3>Making of Guitar Club</h3>
+                 <i class="ri-fullscreen-line expand-icon"></i>
+              </div>
             </div>
           </div>
 
-          <div class="gallery-item hover-card">
-            <img src="../assets/placeholder03.jpg" alt="Planning" />
-            <div class="item-overlay">
-              <span class="tag">Planning</span>
-              <h3>Core Team Strategy</h3>
+          <!-- Item 3 -->
+          <div class="masonry-item fade-in-up delay-2">
+            <div class="gallery-card" onclick="openLightbox(this)">
+              <img src="../assets/placeholder03.jpg" alt="Planning" loading="lazy" />
+              <div class="card-overlay">
+                <span class="category-pill">Planning</span>
+                <h3>Core Team Strategy</h3>
+                 <i class="ri-fullscreen-line expand-icon"></i>
+              </div>
             </div>
           </div>
 
-          <div class="gallery-item hover-card">
-            <img src="../assets/placeholder04.jpg" alt="Gaming" />
-            <div class="item-overlay">
-              <span class="tag">Fun</span>
-              <h3>BGMI Tournament</h3>
+          <!-- Item 4 -->
+          <div class="masonry-item fade-in-up delay-3">
+            <div class="gallery-card" onclick="openLightbox(this)">
+              <img src="../assets/placeholder04.jpg" alt="Gaming" loading="lazy" />
+              <div class="card-overlay">
+                <span class="category-pill">Fun</span>
+                <h3>BGMI Tournament</h3>
+                 <i class="ri-fullscreen-line expand-icon"></i>
+              </div>
             </div>
           </div>
+          
+           <!-- Additional Items for Masonry Effect -->
+           <div class="masonry-item fade-in-up delay-1">
+            <div class="gallery-card" onclick="openLightbox(this)">
+              <img src="../assets/placeholder05.jpg" alt="Hackathon" loading="lazy" />
+              <div class="card-overlay">
+                <span class="category-pill">Competition</span>
+                <h3>Hackathon 2025</h3>
+                 <i class="ri-fullscreen-line expand-icon"></i>
+              </div>
+            </div>
+          </div>
+
+           <div class="masonry-item fade-in-up delay-2">
+            <div class="gallery-card" onclick="openLightbox(this)">
+              <img src="../assets/placeholder06.jpg" alt="Award Ceremony" loading="lazy" />
+              <div class="card-overlay">
+                <span class="category-pill">Awards</span>
+                <h3>Victory Moment</h3>
+                 <i class="ri-fullscreen-line expand-icon"></i>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" class="lightbox-content" src="" alt="Fullscreen Image">
+      <div id="lightbox-caption" class="caption"></div>
     </div>
   </main>
   <footer class="site-footer">
@@ -174,9 +221,9 @@
     <div class="footer-bottom">
       <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="#">Privacy Policy</a>
+        <a href="privacy.html">Privacy Policy</a>
         <span>•</span>
-        <a href="#">Terms of Service</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
