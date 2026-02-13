@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events | Kodeb</title>
+  <title data-i18n="meta.title.events">Events | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,14 +26,17 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="events.html" class="nav-link">Events</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="events.html" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
+      </button>
+      <button id="lang-toggle" aria-label="Toggle language" class="lang-btn">
+        JP
       </button>
     </nav>
   </header>
@@ -42,8 +45,8 @@
     <div class="reveal">
       <section class="hero events-hero">
         <div class="hero-content">
-          <h1>The Roadmap</h1>
-          <p>
+          <h1 data-i18n="events.hero.title">The Roadmap</h1>
+          <p data-i18n="events.hero.description">
             Master the stack. Connect with the industry. Our schedule is
             designed to accelerate your career growth.
           </p>
@@ -52,105 +55,18 @@
 
       <div class="filter-container">
         <div class="filters">
-          <button class="filter-btn active" data-cat="all">All Tracks</button>
-          <button class="filter-btn" data-cat="workshop">Workshops</button>
-          <button class="filter-btn" data-cat="meetup">Community</button>
-          <button class="filter-btn" data-cat="webinar">Remote</button>
+          <button class="filter-btn active" data-cat="all" data-i18n="events.filters.all">All Tracks</button>
+          <button class="filter-btn" data-cat="workshop" data-i18n="events.filters.workshop">Workshops</button>
+          <button class="filter-btn" data-cat="meetup" data-i18n="events.filters.community">Community</button>
+          <button class="filter-btn" data-cat="webinar" data-i18n="events.filters.remote">Remote</button>
         </div>
+        <button id="add-event-btn" class="btn-primary" style="margin-left: auto;">
+          <i class="ri-add-line"></i> <span data-i18n="events.add_btn">Add Event</span>
+        </button>
       </div>
 
-      <section class="events-list card-grid">
-        <article class="card event-item" data-cat="workshop">
-          <div class="card-header">
-            <div class="date-badge">
-              <span class="month">OCT</span>
-              <span class="day">20</span>
-            </div>
-            <span class="status-tag">In-Person</span>
-          </div>
-          <div class="card-body">
-            <span class="category-label">Workshop</span>
-            <h3>Advanced JS Patterns</h3>
-            <p>
-              Deep dive into ES6+, Async/Await, and closure patterns for
-              production code.
-            </p>
-            <a href="#" class="event-link">Secure Seat <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-
-        <article class="card event-item" data-cat="meetup">
-          <div class="card-header">
-            <div class="date-badge">
-              <span class="month">NOV</span>
-              <span class="day">20</span>
-            </div>
-            <span class="status-tag">Networking</span>
-          </div>
-          <div class="card-body">
-            <span class="category-label">Meetup</span>
-            <h3>Tech Industry Leads</h3>
-            <p>
-              Lightning talks and networking with engineers from top local
-              tech firms.
-            </p>
-            <a href="#" class="event-link">See List Now <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-
-        <article class="card event-item" data-cat="webinar">
-          <div class="card-header">
-            <div class="date-badge">
-              <span class="month">DEC</span>
-              <span class="day">20</span>
-            </div>
-            <span class="status-tag status-live">Live Stream</span>
-          </div>
-          <div class="card-body">
-            <span class="category-label">Webinar</span>
-            <h3>Scalable Design Systems</h3>
-            <p>Building atomic design components using React.</p>
-            <a href="#" class="event-link">Join Stream <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-
-        <article class="card event-item" data-cat="workshop">
-          <div class="card-header">
-            <div class="date-badge">
-              <span class="month">JAN</span>
-              <span class="day">20</span>
-            </div>
-            <span class="status-tag">In-Person</span>
-          </div>
-          <div class="card-body">
-            <span class="category-label">Workshop</span>
-            <h3>React Ecosystem</h3>
-            <p>
-              From Hooks to State Management. Building your first scalable
-              Web App.
-            </p>
-            <a href="#" class="event-link">Secure Seat <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
-
-        <article class="card event-item" data-cat="meetup">
-          <div class="card-header">
-            <div class="date-badge">
-              <span class="month">FEB</span>
-              <span class="day">20</span>
-            </div>
-            <span class="status-tag status-hot">Flagship</span>
-          </div>
-          <div class="card-body">
-            <span class="category-label">Hackathon</span>
-            <h3>Winter Code Fest</h3>
-            <p>
-              24-hour coding sprint. Build, ship, and win industry
-              recognition.
-            </p>
-            <a href="#" class="event-link">Register Team <i class="ri-arrow-right-line"></i></a>
-          </div>
-        </article>
+      <section class="events-list card-grid" id="events-grid">
+        <!-- Events will be rendered here via JS -->
       </section>
     </div>
   </main>
@@ -161,27 +77,27 @@
         <div class="logo">
           <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
         </div>
-        <p>
+        <p data-i18n="footer.description">
           Architecting the future of software. A collective focused on
           innovation, deployment, and open-source mastery.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="footer.company.title">Company</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" data-i18n="footer.company.about">About</a></li>
+          <li><a href="#" data-i18n="footer.company.careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer.company.blog">Blog</a></li>
+          <li><a href="#" data-i18n="footer.company.brand">Brand</a></li>
+          <li><a href="#" data-i18n="footer.company.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Business</h4>
+        <h4 data-i18n="footer.business.title">Business</h4>
         <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-          <i class="ri-mail-send-line"></i> Email Us
+          <i class="ri-mail-send-line"></i> <span data-i18n="footer.business.email">Email Us</span>
         </a>
 
         <div class="social-links">
@@ -194,15 +110,51 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <p data-i18n="footer.copyright">&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a>
         <span>•</span>
-        <a href="terms.html">Terms of Service</a>
+        <a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a>
       </div>
     </div>
   </footer>
   <div id="toast-container"></div>
+
+  <!-- Add Event Modal -->
+  <div id="event-modal" class="modal-overlay">
+    <div class="glass-modal">
+      <button class="close-modal"><i class="ri-close-line"></i></button>
+      <h2 data-i18n="events.modal.title">Create New Event</h2>
+      
+      <form id="event-form">
+        <div class="form-group">
+          <label data-i18n="events.modal.ph_title">Event Title</label>
+          <input type="text" id="ev-title" required data-i18n="events.modal.ph_title" />
+        </div>
+        
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="ev-date" required />
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="events.modal.ph_desc">Description</label>
+          <textarea id="ev-desc" rows="3" required data-i18n="events.modal.ph_desc"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="events.modal.ph_img">Image URL</label>
+          <input type="url" id="ev-img" data-i18n="events.modal.ph_img" placeholder="https://" />
+        </div>
+
+        <button type="submit" class="btn-primary full-width">
+          <span data-i18n="events.modal.submit">Publish Event</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/translations.js"></script>
   <script src="../js/script.js"></script>
 </body>
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Kode</title>
+  <title data-i18n="meta.title.about">About | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,15 +26,18 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="events.html" class="nav-link">Events</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="events.html" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
 
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
+      </button>
+      <button id="lang-toggle" aria-label="Toggle language" class="lang-btn">
+        JP
       </button>
     </nav>
   </header>
@@ -43,8 +46,8 @@
     <div class="reveal">
       <section class="hero about-hero">
         <div class="hero-content">
-          <h1>The Blueprint</h1>
-          <p>
+          <h1 data-i18n="about.hero.title">The Blueprint</h1>
+          <p data-i18n="about.hero.description">
             We are not just a club. We are a high-performance collective designed
             to bridge the gap between academic theory and industry reality.
           </p>
@@ -56,8 +59,8 @@
           <div class="about-feature-icons">
             <i class="ri-focus-2-line"></i>
           </div>
-          <h2>The Mission</h2>
-          <p>
+          <h2 data-i18n="about.features.mission.title">The Mission</h2>
+          <p data-i18n="about.features.mission.description">
             To create a sandbox for innovation where students can fail fast, learn faster,
             and ship production-grade software before they even graduate.
           </p>
@@ -67,8 +70,8 @@
           <div class="about-feature-icons">
             <i class="ri-eye-2-line"></i>
           </div>
-          <h2>The Vision</h2>
-          <p>
+          <h2 data-i18n="about.features.vision.title">The Vision</h2>
+          <p data-i18n="about.features.vision.description">
             A future where every KODE member graduates not just with a degree,
             but with a portfolio that speaks louder than a resume.
           </p>
@@ -77,8 +80,8 @@
 
       <section class="content-section">
         <div class="section-header a-sec-hdr">
-          <h2>The Architects</h2>
-          <p>The minds building the ecosystem.</p>
+          <h2 data-i18n="about.team.header.title">The Architects</h2>
+          <p data-i18n="about.team.header.subtitle">The minds building the ecosystem.</p>
         </div>
 
         <div class="card-grid">
@@ -86,8 +89,8 @@
             <div>
               <i class="ri-user-star-line"></i>
             </div>
-            <h3>Core Leadership</h3>
-            <p>
+            <h3 data-i18n="about.team.core.title">Core Leadership</h3>
+            <p data-i18n="about.team.core.description">
               Driving strategy, partnerships, and technical direction.
             </p>
           </div>
@@ -96,8 +99,8 @@
             <div>
               <i class="ri-code-box-line"></i>
             </div>
-            <h3>Tech Leads</h3>
-            <p>
+            <h3 data-i18n="about.team.tech.title">Tech Leads</h3>
+            <p data-i18n="about.team.tech.description">
               Mentoring members in Full-Stack, AI, and System Design.
             </p>
           </div>
@@ -106,8 +109,8 @@
             <div>
               <i class="ri-group-line"></i>
             </div>
-            <h3>Faculty Advisors</h3>
-            <p>
+            <h3 data-i18n="about.team.faculty.title">Faculty Advisors</h3>
+            <p data-i18n="about.team.faculty.description">
               Ensuring academic alignment and institutional support.
             </p>
           </div>
@@ -123,27 +126,27 @@
         <div class="logo">
           <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
         </div>
-        <p>
+        <p data-i18n="footer.description">
           Architecting the future of software. A collective focused on
           innovation, deployment, and open-source mastery.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="footer.company.title">Company</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" data-i18n="footer.company.about">About</a></li>
+          <li><a href="#" data-i18n="footer.company.careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer.company.blog">Blog</a></li>
+          <li><a href="#" data-i18n="footer.company.brand">Brand</a></li>
+          <li><a href="#" data-i18n="footer.company.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Business</h4>
+        <h4 data-i18n="footer.business.title">Business</h4>
         <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-          <i class="ri-mail-send-line"></i> Email Us
+          <i class="ri-mail-send-line"></i> <span data-i18n="footer.business.email">Email Us</span>
         </a>
 
         <div class="social-links">
@@ -156,15 +159,16 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <p data-i18n="footer.copyright">&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a>
         <span>•</span>
-        <a href="terms.html">Terms of Service</a>
+        <a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a>
       </div>
     </div>
   </footer>
   <div id="toast-container"></div>
+  <script src="../js/translations.js"></script>
   <script src="../js/script.js"></script>
 </body>
 

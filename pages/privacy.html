@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Kode</title>
+  <title data-i18n="meta.title.privacy">Privacy Policy | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -27,15 +27,18 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="events.html" class="nav-link">Events</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="events.html" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
 
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
+      </button>
+      <button id="lang-toggle" aria-label="Toggle language" class="lang-btn">
+        JP
       </button>
     </nav>
   </header>
@@ -43,14 +46,15 @@
   <main>
     <div class="reveal">
         <section class="privacy-content">
-            <h1>Privacy Policy</h1>
-            <span class="last-updated">Last Updated: February 14, 2026</span>
+            <h1 data-i18n="privacy.title">Privacy Policy</h1>
+            <span class="last-updated" data-i18n="privacy.updated">Last Updated: February 14, 2026</span>
 
             <p>
+            <p data-i18n="privacy.intro">
                 At KODE ("we," "our," or "us"), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and engage with our ecosystem. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
             </p>
 
-            <h2>1. Collection of Your Information</h2>
+            <h2 data-i18n="privacy.sections.collection">1. Collection of Your Information</h2>
             <p>
                 We may collect information about you in a variety of ways. The information we may collect on the Site includes:
             </p>
@@ -59,7 +63,7 @@
                 <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
             </ul>
 
-            <h2>2. Use of Your Information</h2>
+            <h2 data-i18n="privacy.sections.use">2. Use of Your Information</h2>
             <p>
                 Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:
             </p>
@@ -72,7 +76,7 @@
                 <li>Monitor and analyze usage and trends to improve your experience with the Site.</li>
             </ul>
 
-            <h2>3. Disclosure of Your Information</h2>
+            <h2 data-i18n="privacy.sections.disclosure">3. Disclosure of Your Information</h2>
             <p>
                 We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
             </p>
@@ -81,12 +85,12 @@
                 <li><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</li>
             </ul>
 
-            <h2>4. Security of Your Information</h2>
+            <h2 data-i18n="privacy.sections.security">4. Security of Your Information</h2>
             <p>
                 We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.
             </p>
 
-            <h2>5. Contact Us</h2>
+            <h2 data-i18n="privacy.sections.contact">5. Contact Us</h2>
             <p>
                 If you have questions or comments about this Privacy Policy, please contact us at:
             </p>
@@ -105,27 +109,27 @@
         <div class="logo">
           <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
         </div>
-        <p>
+        <p data-i18n="footer.description">
           Architecting the future of software. A collective focused on
           innovation, deployment, and open-source mastery.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="footer.company.title">Company</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html" data-i18n="footer.company.about">About</a></li>
+          <li><a href="#" data-i18n="footer.company.careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer.company.blog">Blog</a></li>
+          <li><a href="#" data-i18n="footer.company.brand">Brand</a></li>
+          <li><a href="contact.html" data-i18n="footer.company.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Business</h4>
+        <h4 data-i18n="footer.business.title">Business</h4>
         <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-          <i class="ri-mail-send-line"></i> Email Us
+          <i class="ri-mail-send-line"></i> <span data-i18n="footer.business.email">Email Us</span>
         </a>
 
         <div class="social-links">
@@ -138,15 +142,16 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <p data-i18n="footer.copyright">&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a>
         <span>•</span>
-        <a href="terms.html">Terms of Service</a>
+        <a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a>
       </div>
     </div>
   </footer>
   <div id="toast-container"></div>
+  <script src="../js/translations.js"></script>
   <script src="../js/script.js"></script>
 </body>
 

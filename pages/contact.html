@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Kode</title>
+  <title data-i18n="meta.title.contact">Contact | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,14 +26,17 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="events.html" class="nav-link">Events</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="events.html" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
+      </button>
+      <button id="lang-toggle" aria-label="Toggle language" class="lang-btn">
+        JP
       </button>
     </nav>
   </header>
@@ -42,8 +45,8 @@
     <div class="reveal">
       <section class="contact-split">
         <div class="contact-info">
-          <h1>Initialize Connection</h1>
-          <p class="lead-text">
+          <h1 data-i18n="contact.info.title">Initialize Connection</h1>
+          <p class="lead-text" data-i18n="contact.info.desc">
             Ready to push code to production? Whether you want to join the
             core team, partner for an event, or just debug a query, our
             channels are open.
@@ -53,59 +56,59 @@
             <div class="info-item">
               <div class="icon-box"><i class="ri-mail-send-line"></i></div>
               <div>
-                <h3>General Inquiries</h3>
-                <a href="mailto:mithlesh.guptag0329@gmail.com" class="link-hover">Mail Us</a>
+                <h3 data-i18n="contact.info.email.title">General Inquiries</h3>
+                <a href="mailto:mithlesh.guptag0329@gmail.com" class="link-hover" data-i18n="contact.info.email.link">Mail Us</a>
               </div>
             </div>
 
             <div class="info-item">
               <div class="icon-box"><i class="ri-map-pin-line"></i></div>
               <div>
-                <h3>Headquarters</h3>
-                <p>JAIN (Deemed-to-be University)</p>
-                <p>#319, 17th Cross, 25th Main, J P Nagar 6th Phase, Bengaluru, Karnataka 560078</p>
+                <h3 data-i18n="contact.info.hq.title">Headquarters</h3>
+                <p data-i18n="contact.info.hq.uni">JAIN (Deemed-to-be University)</p>
+                <p data-i18n="contact.info.hq.addr">#319, 17th Cross, 25th Main, J P Nagar 6th Phase, Bengaluru, Karnataka 560078</p>
               </div>
             </div>
           </div>
 
           <div class="status-box">
             <span class="status-dot"></span>
-            <p>
-              Membership Applications are <strong>OPEN</strong> for 2026
-              Batch.
-            </p>
+             <p data-i18n="contact.info.status">
+               Membership Applications are <strong>OPEN</strong> for 2026
+               Batch.
+             </p>
           </div>
         </div>
 
         <div class="form-container">
           <form id="contact-form" class="industry-form">
             <div class="form-group">
-              <label for="name">Identity</label>
+              <label for="name" data-i18n="contact.form.identity">Identity</label>
               <div class="input-wrapper">
                 <i class="ri-user-line field-icon"></i>
-                <input type="text" id="name" name="name" placeholder="Full Name" required />
+                <input type="text" id="name" name="name" placeholder="Full Name" required data-i18n="contact.form.identity_ph" />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="email">Communication Channel</label>
+              <label for="email" data-i18n="contact.form.channel">Communication Channel</label>
               <div class="input-wrapper">
                 <i class="ri-at-line field-icon"></i>
-                <input type="email" id="email" name="email" placeholder="student@university.edu" required />
+                <input type="email" id="email" name="email" placeholder="student@university.edu" required data-i18n="contact.form.channel_ph" />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="message">Payload / Intent</label>
+              <label for="message" data-i18n="contact.form.payload">Payload / Intent</label>
               <div class="input-wrapper">
                 <i class="ri-chat-1-line field-icon area-icon"></i>
                 <textarea id="message" name="message" rows="4" placeholder="Tell us why you want to join..."
-                  required></textarea>
+                  required data-i18n="contact.form.payload_ph"></textarea>
               </div>
             </div>
 
             <button type="submit" class="btn-primary full-width">
-              Transmit Data <i class="ri-send-plane-fill"></i>
+              <span data-i18n="contact.form.submit">Transmit Data</span> <i class="ri-send-plane-fill"></i>
             </button>
           </form>
         </div>
@@ -119,27 +122,27 @@
         <div class="logo">
           <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
         </div>
-        <p>
+        <p data-i18n="footer.description">
           Architecting the future of software. A collective focused on
           innovation, deployment, and open-source mastery.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="footer.company.title">Company</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" data-i18n="footer.company.about">About</a></li>
+          <li><a href="#" data-i18n="footer.company.careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer.company.blog">Blog</a></li>
+          <li><a href="#" data-i18n="footer.company.brand">Brand</a></li>
+          <li><a href="#" data-i18n="footer.company.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Business</h4>
+        <h4 data-i18n="footer.business.title">Business</h4>
         <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-          <i class="ri-mail-send-line"></i> Email Us
+          <i class="ri-mail-send-line"></i> <span data-i18n="footer.business.email">Email Us</span>
         </a>
 
         <div class="social-links">
@@ -152,15 +155,16 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <p data-i18n="footer.copyright">&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a>
         <span>•</span>
-        <a href="terms.html">Terms of Service</a>
+        <a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a>
       </div>
     </div>
   </footer>
   <div id="toast-container"></div>
+  <script src="../js/translations.js"></script>
   <script src="../js/script.js"></script>
 </body>
 

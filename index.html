@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Kode</title>
+  <title data-i18n="meta.title.home">Home | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,14 +26,17 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="pages/about.html" class="nav-link">About</a></li>
-        <li><a href="pages/events.html" class="nav-link">Events</a></li>
-        <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="pages/about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="pages/events.html" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="pages/gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="pages/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
+      </button>
+      <button id="lang-toggle" aria-label="Toggle language" class="lang-btn">
+        JP
       </button>
     </nav>
   </header>
@@ -42,16 +45,16 @@
     <div class="reveal">
       <section class="hero">
         <div class="hero-content">
-          <h1>Build_ Ship_ Scale.</h1>
+          <h1 data-i18n="hero.title">Build_ Ship_ Scale.</h1>
 
-          <p>
+          <p data-i18n="hero.description">
             We are a high-performance collective bridging the gap between
             academic theory and production-grade engineering. Don't just learn
             code—deploy it.
           </p>
 
           <a href="pages/events.html" class="btn-primary">
-            Explore the Ecosystem <i class="ri-arrow-right-line"></i>
+            <span data-i18n="hero.cta">Explore the Ecosystem</span> <i class="ri-arrow-right-line"></i>
           </a>
         </div>
       </section>
@@ -61,8 +64,8 @@
           <div class="home-card-icons">
             <i class="ri-team-fill"></i>
           </div>
-          <h2>The Collective</h2>
-          <p>
+          <h2 data-i18n="features.collective.title">The Collective</h2>
+          <p data-i18n="features.collective.description">
             We are more than a club; we are an ecosystem of future-ready
             architects and engineers. KODE represents the intersection of
             academic rigor and industry innovation, dedicated to mastering the
@@ -74,8 +77,8 @@
           <div class="home-card-icons">
             <i class="ri-code-s-slash-line"></i>
           </div>
-          <h2>Our Craft</h2>
-          <p>
+          <h2 data-i18n="features.craft.title">Our Craft</h2>
+          <p data-i18n="features.craft.description">
             Bridging the gap between theory and deployment. From high-octane
             hackathons to full-stack development cycles, we build scalable
             solutions and contribute to open-source ecosystems using the
@@ -87,8 +90,8 @@
           <div class="home-card-icons">
             <i class="ri-rocket-2-fill"></i>
           </div>
-          <h2>The Mission</h2>
-          <p>
+          <h2 data-i18n="features.mission.title">The Mission</h2>
+          <p data-i18n="features.mission.description">
             KODE is for those who refuse to settle for "Hello World." If you
             have the hunger to push boundaries, break legacy systems, and
             define the next era of technology, your seat at the table is
@@ -105,27 +108,27 @@
         <div class="logo">
           <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
         </div>
-        <p>
+        <p data-i18n="footer.description">
           Architecting the future of software. A collective focused on
           innovation, deployment, and open-source mastery.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="footer.company.title">Company</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" data-i18n="footer.company.about">About</a></li>
+          <li><a href="#" data-i18n="footer.company.careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer.company.blog">Blog</a></li>
+          <li><a href="#" data-i18n="footer.company.brand">Brand</a></li>
+          <li><a href="#" data-i18n="footer.company.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Business</h4>
+        <h4 data-i18n="footer.business.title">Business</h4>
         <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-          <i class="ri-mail-send-line"></i> Email Us
+          <i class="ri-mail-send-line"></i> <span data-i18n="footer.business.email">Email Us</span>
         </a>
 
         <div class="social-links">
@@ -138,15 +141,16 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <p data-i18n="footer.copyright">&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="pages/privacy.html">Privacy Policy</a>
+        <a href="pages/privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a>
         <span>•</span>
-        <a href="pages/terms.html">Terms of Service</a>
+        <a href="pages/terms.html" data-i18n="footer.legal.terms">Terms of Service</a>
       </div>
     </div>
   </footer>
   <div id="toast-container"></div>
+  <script src="js/translations.js"></script>
   <script src="js/script.js"></script>
 </body>
 

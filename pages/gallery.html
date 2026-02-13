@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | Kode</title>
+  <title data-i18n="meta.title.gallery">Gallery | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/main.css" />
+
 </head>
 
 <body>
@@ -26,14 +27,17 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="events.html" class="nav-link">Events</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="events.html" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
+      </button>
+      <button id="lang-toggle" aria-label="Toggle language" class="lang-btn">
+        JP
       </button>
     </nav>
   </header>
@@ -42,8 +46,8 @@
     <div class="reveal">
       <section class="hero gallery-hero">
         <div class="hero-content">
-          <h1 class="fade-in">Visual Log</h1>
-          <p class="fade-in delay-1">
+          <h1 class="fade-in" data-i18n="gallery.hero.title">Visual Log</h1>
+          <p class="fade-in delay-1" data-i18n="gallery.hero.description">
             Documenting the journey. From late-night debugging sessions to
             competition victories, this is KODE in action.
           </p>
@@ -54,7 +58,7 @@
         <div class="section-title">
           <h2>
             <i class="ri-flashlight-fill logo-dot"></i>
-            Spotlight
+            <span data-i18n="gallery.slider.title">Spotlight</span>
           </h2>
         </div>
 
@@ -63,22 +67,22 @@
             <div class="slide active">
               <img src="../assets/placeholder05.jpg" alt="JavaScript Master Class" />
               <div class="slide-caption">
-                <h3>Web Development Advance Topics</h3>
-                <p>Class focused on modern frameworks (React, Next.js), backend scalability, and DevOps.</p>
+                <h3 data-i18n="gallery.slider.slide1.title">Web Development Advance Topics</h3>
+                <p data-i18n="gallery.slider.slide1.desc">Class focused on modern frameworks (React, Next.js), backend scalability, and DevOps.</p>
               </div>
             </div>
             <div class="slide">
               <img src="../assets/placeholder06.jpg" alt="Tech Lead Meetup" />
               <div class="slide-caption">
-                <h3>MAANG Fest</h3>
-                <p>Network with Top Tier Talents</p>
+                <h3 data-i18n="gallery.slider.slide2.title">MAANG Fest</h3>
+                <p data-i18n="gallery.slider.slide2.desc">Network with Top Tier Talents</p>
               </div>
             </div>
             <div class="slide">
               <img src="../assets/placeholder07.jpg" alt="Robotics and Machine Learning" />
               <div class="slide-caption">
-                <h3>Robotics & IoT Workshop</h3>
-                <p>Workshop in the Toyota Manufacturing Faculty</p>
+                <h3 data-i18n="gallery.slider.slide3.title">Robotics & IoT Workshop</h3>
+                <p data-i18n="gallery.slider.slide3.desc">Workshop in the Toyota Manufacturing Faculty</p>
               </div>
             </div>
           </div>
@@ -93,8 +97,9 @@
 
       <section class="archive-section">
         <div class="section-title fade-in">
-          <h2>The Archives</h2>
-          <p class="subtitle">Curated moments from past semesters.</p>
+          <h2 data-i18n="gallery.archive.title">The Archives</h2>
+          <p class="subtitle" data-i18n="gallery.archive.subtitle">Curated moments from past semesters.</p>
+          <button id="add-photo-btn" class="btn-secondary" data-i18n="gallery.btn_add_photo" style="margin-top: 1rem;">Add Photo</button>
         </div>
 
         <div class="masonry-grid">
@@ -103,8 +108,8 @@
             <div class="gallery-card" onclick="openLightbox(this)">
               <img src="../assets/placeholder01.jpg" alt="Robotics Workshop" loading="lazy" />
               <div class="card-overlay">
-                <span class="category-pill">Workshop</span>
-                <h3>Robotics & AI</h3>
+                <span class="category-pill" data-i18n="gallery.archive.items.robotics.cat">Workshop</span>
+                <h3 data-i18n="gallery.archive.items.robotics.title">Robotics & AI</h3>
                 <i class="ri-fullscreen-line expand-icon"></i>
               </div>
             </div>
@@ -115,8 +120,8 @@
             <div class="gallery-card" onclick="openLightbox(this)">
               <img src="../assets/placeholder02.jpg" alt="Guitar Club" loading="lazy" />
               <div class="card-overlay">
-                <span class="category-pill">Social</span>
-                <h3>Making of Guitar Club</h3>
+                <span class="category-pill" data-i18n="gallery.archive.items.guitar.cat">Social</span>
+                <h3 data-i18n="gallery.archive.items.guitar.title">Making of Guitar Club</h3>
                  <i class="ri-fullscreen-line expand-icon"></i>
               </div>
             </div>
@@ -127,8 +132,8 @@
             <div class="gallery-card" onclick="openLightbox(this)">
               <img src="../assets/placeholder03.jpg" alt="Planning" loading="lazy" />
               <div class="card-overlay">
-                <span class="category-pill">Planning</span>
-                <h3>Core Team Strategy</h3>
+                <span class="category-pill" data-i18n="gallery.archive.items.strategy.cat">Planning</span>
+                <h3 data-i18n="gallery.archive.items.strategy.title">Core Team Strategy</h3>
                  <i class="ri-fullscreen-line expand-icon"></i>
               </div>
             </div>
@@ -139,8 +144,8 @@
             <div class="gallery-card" onclick="openLightbox(this)">
               <img src="../assets/placeholder04.jpg" alt="Gaming" loading="lazy" />
               <div class="card-overlay">
-                <span class="category-pill">Fun</span>
-                <h3>BGMI Tournament</h3>
+                <span class="category-pill" data-i18n="gallery.archive.items.gaming.cat">Fun</span>
+                <h3 data-i18n="gallery.archive.items.gaming.title">BGMI Tournament</h3>
                  <i class="ri-fullscreen-line expand-icon"></i>
               </div>
             </div>
@@ -151,8 +156,8 @@
             <div class="gallery-card" onclick="openLightbox(this)">
               <img src="../assets/placeholder05.jpg" alt="Hackathon" loading="lazy" />
               <div class="card-overlay">
-                <span class="category-pill">Competition</span>
-                <h3>Hackathon 2025</h3>
+                <span class="category-pill" data-i18n="gallery.archive.items.hackathon.cat">Competition</span>
+                <h3 data-i18n="gallery.archive.items.hackathon.title">Hackathon 2025</h3>
                  <i class="ri-fullscreen-line expand-icon"></i>
               </div>
             </div>
@@ -162,8 +167,8 @@
             <div class="gallery-card" onclick="openLightbox(this)">
               <img src="../assets/placeholder06.jpg" alt="Award Ceremony" loading="lazy" />
               <div class="card-overlay">
-                <span class="category-pill">Awards</span>
-                <h3>Victory Moment</h3>
+                <span class="category-pill" data-i18n="gallery.archive.items.victory.cat">Awards</span>
+                <h3 data-i18n="gallery.archive.items.victory.title">Victory Moment</h3>
                  <i class="ri-fullscreen-line expand-icon"></i>
               </div>
             </div>
@@ -179,6 +184,33 @@
       <img id="lightbox-img" class="lightbox-content" src="" alt="Fullscreen Image">
       <div id="lightbox-caption" class="caption"></div>
     </div>
+    <!-- Modal for Adding Image -->
+    <div id="gallery-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 data-i18n="gallery.modal.title">Add New Photo</h2>
+        <form id="gallery-form">
+          <div class="form-group">
+            <label for="img-url" data-i18n="gallery.label_url">Image Link</label>
+            <input type="text" id="img-url" placeholder="Image URL" required />
+          </div>
+          <div class="form-group">
+            <label for="img-caption" data-i18n="gallery.label_caption">Caption</label>
+            <input type="text" id="img-caption" placeholder="Caption" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="gallery.category">Category</label>
+            <select id="img-category">
+               <option value="hackathon" data-i18n="gallery.cat_hackathon">Hackathon</option>
+               <option value="social" data-i18n="gallery.cat_social">Social</option>
+               <option value="projects" data-i18n="gallery.cat_projects">Projects</option>
+               <option value="workshop" data-i18n="gallery.cat_workshop">Workshop</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="gallery.modal.submit">Add to Gallery</button>
+        </form>
+      </div>
+    </div>
   </main>
   <footer class="site-footer">
     <div class="footer-content">
@@ -186,27 +218,27 @@
         <div class="logo">
           <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
         </div>
-        <p>
+        <p data-i18n="footer.description">
           Architecting the future of software. A collective focused on
           innovation, deployment, and open-source mastery.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4 data-i18n="footer.company.title">Company</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Brand</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" data-i18n="footer.company.about">About</a></li>
+          <li><a href="#" data-i18n="footer.company.careers">Careers</a></li>
+          <li><a href="#" data-i18n="footer.company.blog">Blog</a></li>
+          <li><a href="#" data-i18n="footer.company.brand">Brand</a></li>
+          <li><a href="#" data-i18n="footer.company.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Business</h4>
+        <h4 data-i18n="footer.business.title">Business</h4>
         <a href="mailto:mithlesh.guptag0329@gmail.com" class="footer-email">
-          <i class="ri-mail-send-line"></i> Email Us
+          <i class="ri-mail-send-line"></i> <span data-i18n="footer.business.email">Email Us</span>
         </a>
 
         <div class="social-links">
@@ -219,15 +251,16 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
+      <p data-i18n="footer.copyright">&copy; 2026 KODE. Ltd. | Built for the Community with ❤️</p>
       <div class="legal-links">
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a>
         <span>•</span>
-        <a href="terms.html">Terms of Service</a>
+        <a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a>
       </div>
     </div>
   </footer>
   <div id="toast-container"></div>
+  <script src="../js/translations.js"></script>
   <script src="../js/script.js"></script>
 </body>
 
