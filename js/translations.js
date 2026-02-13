@@ -175,8 +175,11 @@ const translations = {
         cat_social: "Social",
         cat_projects: "Projects",
         cat_workshop: "Workshop",
+        category: "Category",
         label_url: "Image Link",
         label_caption: "Caption",
+        ph_url: "https://example.com/image.jpg",
+        ph_caption: "Describe this moment...",
         modal: {
           title: "Add New Photo",
           submit: "Add to Gallery"
@@ -426,8 +429,11 @@ const translations = {
         cat_social: "交流会",
         cat_projects: "プロジェクト",
         cat_workshop: "ワークショップ",
+        category: "カテゴリー",
         label_url: "画像リンク",
         label_caption: "キャプション",
+        ph_url: "https://example.com/image.jpg",
+        ph_caption: "この瞬間を説明...",
         modal: {
           title: "新しい写真を追加",
           submit: "ギャラリーに追加"

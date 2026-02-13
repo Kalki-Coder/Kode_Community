@@ -96,10 +96,12 @@
       </section>
 
       <section class="archive-section">
-        <div class="section-title fade-in">
-          <h2 data-i18n="gallery.archive.title">The Archives</h2>
-          <p class="subtitle" data-i18n="gallery.archive.subtitle">Curated moments from past semesters.</p>
-          <button id="add-photo-btn" class="btn-secondary" data-i18n="gallery.btn_add_photo" style="margin-top: 1rem;">Add Photo</button>
+        <div class="section-title fade-in archive-header-row">
+          <div>
+            <h2 data-i18n="gallery.archive.title">The Archives</h2>
+            <p class="subtitle" data-i18n="gallery.archive.subtitle">Curated moments from past semesters.</p>
+          </div>
+          <button id="add-photo-btn" class="btn-primary" data-i18n="gallery.archive.btn_add_photo" style="margin-top: 0;">Add Photo</button>
         </div>
 
         <div class="masonry-grid">
@@ -185,29 +187,29 @@
       <div id="lightbox-caption" class="caption"></div>
     </div>
     <!-- Modal for Adding Image -->
-    <div id="gallery-modal" class="modal">
-      <div class="modal-content">
+    <div id="gallery-modal" class="modal-overlay">
+      <div class="glass-modal">
         <span class="close-modal">&times;</span>
-        <h2 data-i18n="gallery.modal.title">Add New Photo</h2>
+        <h2 data-i18n="gallery.archive.modal.title">Add New Photo</h2>
         <form id="gallery-form">
           <div class="form-group">
-            <label for="img-url" data-i18n="gallery.label_url">Image Link</label>
-            <input type="text" id="img-url" placeholder="Image URL" required />
+            <label for="img-url" data-i18n="gallery.archive.label_url">Image Link</label>
+            <input type="text" id="img-url" data-i18n="gallery.archive.ph_url" placeholder="Image URL" required />
           </div>
           <div class="form-group">
-            <label for="img-caption" data-i18n="gallery.label_caption">Caption</label>
-            <input type="text" id="img-caption" placeholder="Caption" required />
+            <label for="img-caption" data-i18n="gallery.archive.label_caption">Caption</label>
+            <input type="text" id="img-caption" data-i18n="gallery.archive.ph_caption" placeholder="Caption" required />
           </div>
           <div class="form-group">
-            <label data-i18n="gallery.category">Category</label>
+            <label data-i18n="gallery.archive.category">Category</label>
             <select id="img-category">
-               <option value="hackathon" data-i18n="gallery.cat_hackathon">Hackathon</option>
-               <option value="social" data-i18n="gallery.cat_social">Social</option>
-               <option value="projects" data-i18n="gallery.cat_projects">Projects</option>
-               <option value="workshop" data-i18n="gallery.cat_workshop">Workshop</option>
+               <option value="hackathon" data-i18n="gallery.archive.cat_hackathon">Hackathon</option>
+               <option value="social" data-i18n="gallery.archive.cat_social">Social</option>
+               <option value="projects" data-i18n="gallery.archive.cat_projects">Projects</option>
+               <option value="workshop" data-i18n="gallery.archive.cat_workshop">Workshop</option>
             </select>
           </div>
-          <button type="submit" class="btn-primary" data-i18n="gallery.modal.submit">Add to Gallery</button>
+          <button type="submit" class="btn-primary" data-i18n="gallery.archive.modal.submit">Add to Gallery</button>
         </form>
       </div>
     </div>

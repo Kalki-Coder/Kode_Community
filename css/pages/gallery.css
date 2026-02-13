@@ -278,3 +278,27 @@
     .slider-section { margin-top: 2rem; }
     .slider { aspect-ratio: 16 / 9; }
 }
+
+
+/* --- Archive Header Layout --- */
+.archive-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.archive-header-row .subtitle {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .archive-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .archive-header-row button {
+        margin-top: 1rem !important;
+    }
+}
