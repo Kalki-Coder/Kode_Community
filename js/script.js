@@ -115,30 +115,88 @@ function initSlider() {
   resetTimer();
 }
 
-/* --- 5. Event Filtering --- */
+/* --- 5. Event Filtering (FLIP Animation) --- */
 function initFilters() {
   const buttons = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".event-item");
+  const cards = Array.from(document.querySelectorAll(".event-item"));
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Visual State
+      // Visual State for buttons
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
       const category = btn.dataset.cat;
-
-      cards.forEach(card => {
-        const cardCat = card.dataset.cat;
-        if (category === "all" || category === cardCat) {
-          card.style.display = "block";
-          setTimeout(() => card.style.opacity = "1", 10);
-        } else {
-          card.style.opacity = "0";
-          setTimeout(() => card.style.display = "none", 300);
-        }
-      });
+      filterCards(cards, category);
     });
+  });
+}
+
+function filterCards(cards, category) {
+  // 1. First: Record start positions of currently visible items
+  const startPositions = new Map();
+  cards.forEach(card => {
+    if (card.style.display !== 'none') {
+      const rect = card.getBoundingClientRect();
+      startPositions.set(card, { top: rect.top, left: rect.left });
+    }
+  });
+
+  // 2. Last: Apply layout changes (Toggle display)
+  cards.forEach(card => {
+    const cardCat = card.dataset.cat;
+    const shouldShow = (category === "all" || category === cardCat);
+    
+    // Clear any previous transition styles to avoid unexpected behavior
+    card.style.transition = 'none'; 
+    card.style.opacity = shouldShow ? '1' : '0';
+    card.style.display = shouldShow ? 'block' : 'none';
+    card.style.transform = '';
+  });
+
+  // Force reflow to ensure display:none takes effect in layout
+  document.body.offsetHeight;
+
+  // 3. Invert & Play: Animate items to new positions
+  cards.forEach(card => {
+    // If card is visible now...
+    if (card.style.display !== 'none') {
+      const rect = card.getBoundingClientRect(); // New position
+      
+      // Case A: Card was visible before (Move)
+      if (startPositions.has(card)) {
+        const start = startPositions.get(card);
+        const deltaX = start.left - rect.left;
+        const deltaY = start.top - rect.top;
+
+        // Apply Inverted Transform (visually put it back to old spot)
+        if (deltaX !== 0 || deltaY !== 0) {
+          card.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+          
+          // Play Animation to 0,0
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              card.style.transition = 'transform 0.4s cubic-bezier(0.2, 0, 0.2, 1)';
+              card.style.transform = '';
+            });
+          });
+        }
+      } 
+      // Case B: Card is new (Enter)
+      else {
+        // Start state for entry
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.9)';
+        
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            card.style.transition = 'all 0.4s ease'; // Animate opacity and scale
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          });
+        });
+      }
+    }
   });
 }
 

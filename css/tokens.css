@@ -1,11 +1,13 @@
-/* VARIABLES & THEME SETUP */
+/* =========================================
+   TOKENS & VARIABLES
+   ========================================= */
 
 :root {
   --font-main: "Outfit", sans-serif;
 
   /* Light Mode */
   --bg-body: rgb(240, 242, 245);
-  --bg-card: rgba(255, 255, 255, 0.85); /* ----------Glass effect */
+  --bg-card: rgba(255, 255, 255, 0.85); /* Glass effect */
   --bg-header: rgba(255, 255, 255, 0.7);
   --text-main: #1a1c1e;
   --text-muted: #6c757d;
@@ -16,10 +18,10 @@
   --radius: 16px;
 }
 
-body .dark-mode {
+body.dark-mode {
   /* Dark Mode */
   --bg-body: #0f172a;
-  --bg-card: rgba(30, 41, 59, 0.7); /* ----------Glass effect */
+  --bg-card: rgba(30, 41, 59, 0.7); /* Glass effect */
   --bg-header: rgba(15, 23, 42, 0.7);
   --text-main: #e2e8f0;
   --text-muted: #94a3b8;
@@ -27,24 +29,4 @@ body .dark-mode {
   --primary-glow: rgba(59, 130, 246, 0.4);
   --border: rgba(255, 255, 255, 0.08);
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* GLOBAL RESET & APP FEEL */
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--bg-body);
-  color: var(--text-main);
-  font-family: var(--font-main);
-  line-height: 1.6;
-  transition:
-    background 0.4s ease,
-    color 0.4s ease;
-  overflow-x: hidden;
 }

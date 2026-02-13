@@ -1,0 +1,64 @@
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+.about-hero {
+    background: linear-gradient(135deg, #111827, #374151);
+    border-radius: var(--radius);
+    padding: 5rem 2rem 6rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-features {
+    margin-top: -2rem;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-feature-icons {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Content Sections */
+.content-section {
+    margin-top: 2rem;
+}
+
+.a-sec-hdr {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.a-sec-hdr h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.a-sec-hdr p {
+    color: var(--text-muted);
+}
+
+.grid-card {
+    text-align: center;
+}
+
+.grid-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.grid-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}

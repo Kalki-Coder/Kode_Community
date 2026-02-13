@@ -1,0 +1,115 @@
+/* =========================================
+   EVENTS PAGE
+   ========================================= */
+
+.events-hero {
+    background: linear-gradient(135deg, #111827, #374151);
+    border-radius: var(--radius);
+    padding: 5rem 2rem 6rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating Filter Bar */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -2rem; /* Pulls it up into the Hero */
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.filters {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  color: var(--text-muted);
+  background: transparent;
+}
+
+.filter-btn:hover {
+    color: var(--primary);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+/* Event Cards Layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.event-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid var(--primary); /* Accent Top */
+}
+
+.event-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.category-label {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: 0.3s;
+}
+
+.event-link:hover {
+  color: var(--primary);
+  gap: 0.8rem;
+}

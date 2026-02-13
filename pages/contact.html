@@ -4,19 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Kode</title>
+  <title>Contact | Kode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style_phase_2.css" />
-  <link rel="stylesheet" href="css/style_phase_1.css" />
+  <link rel="stylesheet" href="../css/main.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="logo">
-      <a href="index.html">
+      <a href="../index.html">
         <span class="logo-K">K</span>ODE<span class="logo-dot">.</span>
       </a>
     </div>
@@ -27,13 +26,12 @@
 
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="events.html" class="nav-link">Events</a></li>
         <li><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-
       <button id="dm-toggle" aria-label="Toggle theme">
         <i class="ri-sun-line"></i>
       </button>
@@ -42,79 +40,76 @@
 
   <main>
     <div class="reveal">
-      <section class="hero about-hero">
-        <div class="hero-content">
-          <h1>The Blueprint</h1>
-          <p>
-            We are not just a club. We are a high-performance collective designed
-            to bridge the gap between academic theory and industry reality.
+      <section class="contact-split">
+        <div class="contact-info">
+          <h1>Initialize Connection</h1>
+          <p class="lead-text">
+            Ready to push code to production? Whether you want to join the
+            core team, partner for an event, or just debug a query, our
+            channels are open.
           </p>
-        </div>
-      </section>
 
-      <section class="features about-features">
-        <div class="feature-card">
-          <div class="about-feature-icons">
-            <i class="ri-focus-2-line"></i>
-          </div>
-          <h2>The Mission</h2>
-          <p>
-            To create a sandbox for innovation where students can fail fast, learn faster,
-            and ship production-grade software before they even graduate.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="about-feature-icons">
-            <i class="ri-eye-2-line"></i>
-          </div>
-          <h2>The Vision</h2>
-          <p>
-            A future where every KODE member graduates not just with a degree,
-            but with a portfolio that speaks louder than a resume.
-          </p>
-        </div>
-      </section>
-
-      <section class="content-section">
-        <div class="section-header a-sec-hdr">
-          <h2>The Architects</h2>
-          <p>The minds building the ecosystem.</p>
-        </div>
-
-        <div class="card-grid">
-          <div class="card grid-card">
-            <div>
-              <i class="ri-user-star-line"></i>
+          <div class="info-grid">
+            <div class="info-item">
+              <div class="icon-box"><i class="ri-mail-send-line"></i></div>
+              <div>
+                <h3>General Inquiries</h3>
+                <a href="mailto:mithlesh.guptag0329@gmail.com" class="link-hover">Mail Us</a>
+              </div>
             </div>
-            <h3>Core Leadership</h3>
-            <p>
-              Driving strategy, partnerships, and technical direction.
-            </p>
+
+            <div class="info-item">
+              <div class="icon-box"><i class="ri-map-pin-line"></i></div>
+              <div>
+                <h3>Headquarters</h3>
+                <p>JAIN (Deemed-to-be University)</p>
+                <p>#319, 17th Cross, 25th Main, J P Nagar 6th Phase, Bengaluru, Karnataka 560078</p>
+              </div>
+            </div>
           </div>
 
-          <div class="card grid-card">
-            <div>
-              <i class="ri-code-box-line"></i>
-            </div>
-            <h3>Tech Leads</h3>
+          <div class="status-box">
+            <span class="status-dot"></span>
             <p>
-              Mentoring members in Full-Stack, AI, and System Design.
-            </p>
-          </div>
-
-          <div class="card grid-card">
-            <div>
-              <i class="ri-group-line"></i>
-            </div>
-            <h3>Faculty Advisors</h3>
-            <p>
-              Ensuring academic alignment and institutional support.
+              Membership Applications are <strong>OPEN</strong> for 2026
+              Batch.
             </p>
           </div>
         </div>
-      </section>
 
+        <div class="form-container">
+          <form id="contact-form" class="industry-form">
+            <div class="form-group">
+              <label for="name">Identity</label>
+              <div class="input-wrapper">
+                <i class="ri-user-line field-icon"></i>
+                <input type="text" id="name" name="name" placeholder="Full Name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Communication Channel</label>
+              <div class="input-wrapper">
+                <i class="ri-at-line field-icon"></i>
+                <input type="email" id="email" name="email" placeholder="student@university.edu" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Payload / Intent</label>
+              <div class="input-wrapper">
+                <i class="ri-chat-1-line field-icon area-icon"></i>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us why you want to join..."
+                  required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary full-width">
+              Transmit Data <i class="ri-send-plane-fill"></i>
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -166,7 +161,7 @@
     </div>
   </footer>
   <div id="toast-container"></div>
-  <script src="script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>
